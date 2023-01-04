@@ -49,7 +49,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func setupView(_ scene: UIWindowScene){
-        window = UIWindow(windowScene: windowScene)
+        window = UIWindow(windowScene: scene)
         window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
     }
