@@ -26,7 +26,7 @@ class CalculatorController: UIViewController {
         stkMainContent.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
     }
     
-    private lazy var lblNumbers:UILabel = {
+    private lazy var lblResult:UILabel = {
         let lbl = UILabel()
         lbl.text = "0"
         lbl.textColor = .white
@@ -36,11 +36,11 @@ class CalculatorController: UIViewController {
         return lbl
     }()
     
-    private func lblNumbersConstraints(){
-        view.addSubview(lblNumbers)
-        lblNumbers.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-        lblNumbers.bottomAnchor.constraint(equalTo: stkMainContent.topAnchor, constant: -40).isActive = true
-        lblNumbers.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+    private func lblResultConstraints(){
+        view.addSubview(lblResult)
+        lblResult.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        lblResult.bottomAnchor.constraint(equalTo: stkMainContent.topAnchor, constant: -40).isActive = true
+        lblResult.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
     }
     
     private lazy var stkHorizontal1:UIStackView = {
@@ -63,10 +63,11 @@ class CalculatorController: UIViewController {
     
     private lazy var btn1:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("AC", for: .normal)
+        btn.backgroundColor = UIColor(named: "grayButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.addTarget(self, action: #selector(operatorAC), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -76,12 +77,17 @@ class CalculatorController: UIViewController {
         btn1.heightAnchor.constraint(equalTo: btn1.widthAnchor, multiplier: 1).isActive = true
     }
     
+    @objc func operatorAC(){
+        print("operator AC")
+    }
+    
     private lazy var btn2:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("+/-", for: .normal)
+        btn.backgroundColor = UIColor(named: "grayButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.addTarget(self, action: #selector(operatorPlusMinus), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -91,12 +97,17 @@ class CalculatorController: UIViewController {
         btn2.heightAnchor.constraint(equalTo: btn2.widthAnchor, multiplier: 1).isActive = true
     }
     
+    @objc func operatorPlusMinus(){
+        print("operator Plus Minus")
+    }
+    
     private lazy var btn3:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("%", for: .normal)
+        btn.backgroundColor = UIColor(named: "grayButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.addTarget(self, action: #selector(operatorPercentage), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -106,12 +117,17 @@ class CalculatorController: UIViewController {
         btn3.heightAnchor.constraint(equalTo: btn3.widthAnchor, multiplier: 1).isActive = true
     }
     
+    @objc func operatorPercentage(){
+        print("operator Percentage")
+    }
+    
     private lazy var btn4:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("÷", for: .normal)
+        btn.backgroundColor = UIColor(named: "orangeButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.addTarget(self, action: #selector(operatorDivision), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -119,6 +135,10 @@ class CalculatorController: UIViewController {
     private func btn4Constraints(){
         stkHorizontal1.addArrangedSubview(btn4)
         btn4.heightAnchor.constraint(equalTo: btn4.widthAnchor, multiplier: 1).isActive = true
+    }
+    
+    @objc func operatorDivision(){
+        print("operator Division")
     }
     
     private lazy var stkHorizontal2:UIStackView = {
@@ -141,10 +161,12 @@ class CalculatorController: UIViewController {
     
     private lazy var btn5:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("7", for: .normal)
+        btn.backgroundColor = UIColor(named: "blackButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.tag = 7
+        btn.addTarget(self, action: #selector(operatorNumber), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -156,10 +178,12 @@ class CalculatorController: UIViewController {
     
     private lazy var btn6:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("8", for: .normal)
+        btn.backgroundColor = UIColor(named: "blackButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.tag = 8
+        btn.addTarget(self, action: #selector(operatorNumber), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -171,10 +195,12 @@ class CalculatorController: UIViewController {
     
     private lazy var btn7:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("9", for: .normal)
+        btn.backgroundColor = UIColor(named: "blackButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.tag = 9
+        btn.addTarget(self, action: #selector(operatorNumber), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -186,10 +212,11 @@ class CalculatorController: UIViewController {
     
     private lazy var btn8:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("x", for: .normal)
+        btn.backgroundColor = UIColor(named: "orangeButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.addTarget(self, action: #selector(operatorMultiplication), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -197,6 +224,10 @@ class CalculatorController: UIViewController {
     private func btn8Constraints(){
         stkHorizontal2.addArrangedSubview(btn8)
         btn8.heightAnchor.constraint(equalTo: btn8.widthAnchor, multiplier: 1).isActive = true
+    }
+    
+    @objc func operatorMultiplication(){
+        print("operator Multiplication")
     }
     
     private lazy var stkHorizontal3:UIStackView = {
@@ -219,10 +250,12 @@ class CalculatorController: UIViewController {
     
     private lazy var btn9:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("4", for: .normal)
+        btn.backgroundColor = UIColor(named: "blackButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.tag = 4
+        btn.addTarget(self, action: #selector(operatorNumber), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -234,10 +267,12 @@ class CalculatorController: UIViewController {
     
     private lazy var btn10:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("5", for: .normal)
+        btn.backgroundColor = UIColor(named: "blackButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.tag = 5
+        btn.addTarget(self, action: #selector(operatorNumber), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -249,10 +284,12 @@ class CalculatorController: UIViewController {
     
     private lazy var btn11:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("6", for: .normal)
+        btn.backgroundColor = UIColor(named: "blackButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.tag = 6
+        btn.addTarget(self, action: #selector(operatorNumber), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -264,10 +301,11 @@ class CalculatorController: UIViewController {
     
     private lazy var btn12:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("-", for: .normal)
+        btn.backgroundColor = UIColor(named: "orangeButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.addTarget(self, action: #selector(operatorSubstraction), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -275,6 +313,10 @@ class CalculatorController: UIViewController {
     private func btn12Constraints(){
         stkHorizontal3.addArrangedSubview(btn12)
         btn12.heightAnchor.constraint(equalTo: btn12.widthAnchor, multiplier: 1).isActive = true
+    }
+    
+    @objc func operatorSubstraction(){
+        print("operator -")
     }
     
     private lazy var stkHorizontal4:UIStackView = {
@@ -297,10 +339,12 @@ class CalculatorController: UIViewController {
     
     private lazy var btn13:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("1", for: .normal)
+        btn.backgroundColor = UIColor(named: "blackButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.tag = 1
+        btn.addTarget(self, action: #selector(operatorNumber), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -312,10 +356,12 @@ class CalculatorController: UIViewController {
     
     private lazy var btn14:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("2", for: .normal)
+        btn.backgroundColor = UIColor(named: "blackButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.tag = 2
+        btn.addTarget(self, action: #selector(operatorNumber), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -327,10 +373,12 @@ class CalculatorController: UIViewController {
     
     private lazy var btn15:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("3", for: .normal)
+        btn.backgroundColor = UIColor(named: "blackButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.tag = 3
+        btn.addTarget(self, action: #selector(operatorNumber), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -342,10 +390,11 @@ class CalculatorController: UIViewController {
     
     private lazy var btn16:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("+", for: .normal)
+        btn.backgroundColor = UIColor(named: "orangeButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.addTarget(self, action: #selector(operatorAddition), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -353,6 +402,10 @@ class CalculatorController: UIViewController {
     private func btn16Constraints(){
         stkHorizontal4.addArrangedSubview(btn16)
         btn16.heightAnchor.constraint(equalTo: btn16.widthAnchor, multiplier: 1).isActive = true
+    }
+    
+    @objc func operatorAddition(){
+        print("operator +")
     }
     
     private lazy var stkHorizontal5:UIStackView = {
@@ -389,15 +442,21 @@ class CalculatorController: UIViewController {
     private lazy var btn17:UIButton = {
         let btn = UIButton()
         btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.backgroundColor = UIColor(named: "blackButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.tag = 0
+        btn.addTarget(self, action: #selector(operatorNumber), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
     private func btn17Constraints(){
         stkHorizontalInternal1.addArrangedSubview(btn17)
+    }
+    
+    @objc func operatorNumber(_ event: UIButton){
+        print("operator Number \(event.tag)")
     }
     
     private lazy var stkHorizontalInternal2:UIStackView = {
@@ -418,10 +477,11 @@ class CalculatorController: UIViewController {
     
     private lazy var btn18:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle(".", for: .normal)
+        btn.backgroundColor = UIColor(named: "blackButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.addTarget(self, action: #selector(operatorPointDecimal), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -431,12 +491,17 @@ class CalculatorController: UIViewController {
         btn18.heightAnchor.constraint(equalTo: btn18.widthAnchor, multiplier: 1).isActive = true
     }
     
+    @objc func operatorPointDecimal(){
+        print("operator .")
+    }
+    
     private lazy var btn19:UIButton = {
         let btn = UIButton()
-        btn.setTitle("0", for: .normal)
-        btn.backgroundColor = .gray
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitle("=", for: .normal)
+        btn.backgroundColor = UIColor(named: "orangeButton")
+        btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
+        btn.addTarget(self, action: #selector(operatorResult), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -445,18 +510,21 @@ class CalculatorController: UIViewController {
         stkHorizontalInternal2.addArrangedSubview(btn19)
         btn19.heightAnchor.constraint(equalTo: btn19.widthAnchor, multiplier: 1).isActive = true
     }
+    
+    @objc func operatorResult(){
+        print("operator =")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .black
         stkMainContentConstraints()
-        lblNumbersConstraints()
+        lblResultConstraints()
         stkHorizontal1Constraints()
         stkHorizontal2Constraints()
         stkHorizontal3Constraints()
         stkHorizontal4Constraints()
-        
         stkHorizontal5Constraints()
     }
 
