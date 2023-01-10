@@ -79,6 +79,7 @@ class CalculatorController: UIViewController {
     
     @objc func operatorAC(){
         print("operator AC")
+        btn1.shine()
     }
     
     private lazy var btn2:UIButton = {
@@ -99,6 +100,7 @@ class CalculatorController: UIViewController {
     
     @objc func operatorPlusMinus(){
         print("operator Plus Minus")
+        btn2.shine()
     }
     
     private lazy var btn3:UIButton = {
@@ -119,6 +121,7 @@ class CalculatorController: UIViewController {
     
     @objc func operatorPercentage(){
         print("operator Percentage")
+        btn3.shine()
     }
     
     private lazy var btn4:UIButton = {
@@ -139,6 +142,7 @@ class CalculatorController: UIViewController {
     
     @objc func operatorDivision(){
         print("operator Division")
+        btn4.shine()
     }
     
     private lazy var stkHorizontal2:UIStackView = {
@@ -228,6 +232,7 @@ class CalculatorController: UIViewController {
     
     @objc func operatorMultiplication(){
         print("operator Multiplication")
+        btn8.shine()
     }
     
     private lazy var stkHorizontal3:UIStackView = {
@@ -317,6 +322,7 @@ class CalculatorController: UIViewController {
     
     @objc func operatorSubstraction(){
         print("operator -")
+        btn12.shine()
     }
     
     private lazy var stkHorizontal4:UIStackView = {
@@ -406,6 +412,7 @@ class CalculatorController: UIViewController {
     
     @objc func operatorAddition(){
         print("operator +")
+        btn16.shine()
     }
     
     private lazy var stkHorizontal5:UIStackView = {
@@ -457,6 +464,7 @@ class CalculatorController: UIViewController {
     
     @objc func operatorNumber(_ event: UIButton){
         print("operator Number \(event.tag)")
+        event.shine()
     }
     
     private lazy var stkHorizontalInternal2:UIStackView = {
@@ -493,6 +501,7 @@ class CalculatorController: UIViewController {
     
     @objc func operatorPointDecimal(){
         print("operator .")
+        btn18.shine()
     }
     
     private lazy var btn19:UIButton = {
@@ -513,6 +522,7 @@ class CalculatorController: UIViewController {
     
     @objc func operatorResult(){
         print("operator =")
+        btn19.shine()
     }
 
     override func viewDidLoad() {
@@ -527,6 +537,28 @@ class CalculatorController: UIViewController {
         stkHorizontal4Constraints()
         stkHorizontal5Constraints()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        btn1.round()
+        btn2.round()
+        btn3.round()
+        btn4.round()
+        btn5.round()
+        btn6.round()
+        btn7.round()
+        btn8.round()
+        btn9.round()
+        btn10.round()
+        btn11.round()
+        btn12.round()
+        btn13.round()
+        btn14.round()
+        btn15.round()
+        btn16.round()
+        btn17.round()
+        btn18.round()
+        btn19.round()
+    }
 }
 
