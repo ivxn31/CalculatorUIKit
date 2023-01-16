@@ -12,6 +12,7 @@
 		2310C7A12965026F0067979E /* CalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310C7A02965026F0067979E /* CalculatorController.swift */; };
 		2310C7A6296502710067979E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2310C7A5296502710067979E /* Assets.xcassets */; };
 		2310C7A9296502710067979E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2310C7A7296502710067979E /* LaunchScreen.storyboard */; };
+		2346B0A7297603E200692A73 /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346B0A6297603E200692A73 /* Operations.swift */; };
 		2372BECF296CE24B0074E64E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2372BECE296CE24B0074E64E /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		2310C7A5296502710067979E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2310C7A8296502710067979E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2310C7AA296502710067979E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2346B0A6297603E200692A73 /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
 		2372BECE296CE24B0074E64E /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 		2310C79B2965026F0067979E /* calculatoruikit */ = {
 			isa = PBXGroup;
 			children = (
+				2346B0A5297603CD00692A73 /* domain */,
 				2310C7B2296502F00067979E /* resources */,
 				2310C7B1296502EB0067979E /* ui */,
 				2310C7B0296502E40067979E /* settings */,
@@ -89,6 +92,14 @@
 				2372BECE296CE24B0074E64E /* UIButtonExtension.swift */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		2346B0A5297603CD00692A73 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				2346B0A6297603E200692A73 /* Operations.swift */,
+			);
+			path = domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 				2372BECF296CE24B0074E64E /* UIButtonExtension.swift in Sources */,
 				2310C79D2965026F0067979E /* AppDelegate.swift in Sources */,
 				2310C79F2965026F0067979E /* SceneDelegate.swift in Sources */,
+				2346B0A7297603E200692A73 /* Operations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

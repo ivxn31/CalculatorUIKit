@@ -9,6 +9,38 @@ import UIKit
 
 class CalculatorController: UIViewController {
     
+    private var total: Double = 0
+    private var temp: Double = 0
+    private var operating =  false
+    private var decimal = false
+    private var operation:Operations = .none
+    
+    private let kDecimalSeparator = Locale.current.decimalSeparator!
+    private let kMaxLength = 9
+    private let kMaxValue: Double = 999999999
+    private let kMinValue: Double = 0.00000001
+    
+    private let auxFormatter:NumberFormatter = {
+        let formatter = NumberFormatter()
+        let locale = Locale.current
+        formatter.groupingSeparator = ""
+        formatter.decimalSeparator = locale.decimalSeparator
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
+    
+    private let printFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        let locale = Locale.current
+        formatter.groupingSeparator = locale.groupingSeparator
+        formatter.decimalSeparator = locale.decimalSeparator
+        formatter.numberStyle = .decimal
+        formatter.maximumIntegerDigits = 9
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 8
+        return formatter
+    }()
+    
     private lazy var stkMainContent:UIStackView = {
         let stk = UIStackView()
         stk.axis = .vertical
@@ -485,7 +517,7 @@ class CalculatorController: UIViewController {
     
     private lazy var btn18:UIButton = {
         let btn = UIButton()
-        btn.setTitle(".", for: .normal)
+        //btn.setTitle(".", for: .normal)
         btn.backgroundColor = UIColor(named: "blackButton")
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
@@ -536,6 +568,7 @@ class CalculatorController: UIViewController {
         stkHorizontal3Constraints()
         stkHorizontal4Constraints()
         stkHorizontal5Constraints()
+        result()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -558,7 +591,46 @@ class CalculatorController: UIViewController {
         btn16.round()
         btn17.round()
         btn18.round()
+        btn18.setTitle(kDecimalSeparator, for: .normal)
         btn19.round()
+    }
+    
+    @objc private func clear(){
+        operation = .none
+        //btnOperationAC.setTitle("AC",for: .normal)
+        if temp != 0 {
+            temp = 0
+            lblResult.text = "0"
+        }else{
+            total = 0
+            result()
+        }
+    }
+    
+    @objc private func result(){
+        switch operation {
+        case .none:
+            break
+        case .addition:
+            total = total + temp
+            break
+        case .subtraction:
+            total = total - temp
+            break
+        case .multiplication:
+            total = total * temp
+            break
+        case .division:
+            total = total / temp
+            break
+        case .percent:
+            temp = temp / 100
+            total = temp
+            break
+        }
+        if total <= kMaxValue || total > kMinValue {
+            lblResult.text = printFormatter.string(from: NSNumber(value: total))
+        }
     }
 }
 
