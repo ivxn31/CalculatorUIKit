@@ -111,6 +111,7 @@ class CalculatorController: UIViewController {
     
     @objc func operatorAC(){
         print("operator AC")
+        clear()
         btnOperationAC.shine()
     }
     
@@ -132,6 +133,8 @@ class CalculatorController: UIViewController {
     
     @objc func operatorPlusMinus(){
         print("operator Plus Minus")
+        temp = temp * (-1)
+        lblResult.text = printFormatter.string(from: NSNumber(value: temp))
         btnOperationAddSubt.shine()
     }
     
@@ -153,6 +156,12 @@ class CalculatorController: UIViewController {
     
     @objc func operatorPercentage(){
         print("operator Percentage")
+        if operation != .percent{
+            result()
+        }
+        operating = true
+        operation = .percent
+        result()
         btnPercentage.shine()
     }
     
@@ -174,6 +183,9 @@ class CalculatorController: UIViewController {
     
     @objc func operatorDivision(){
         print("operator Division")
+        result()
+        operating = true
+        operation = .division
         btnDivision.shine()
     }
     
@@ -264,6 +276,9 @@ class CalculatorController: UIViewController {
     
     @objc func operatorMultiplication(){
         print("operator Multiplication")
+        result()
+        operating = true
+        operation = .multiplication
         btnMultiplication.shine()
     }
     
@@ -354,6 +369,9 @@ class CalculatorController: UIViewController {
     
     @objc func operatorSubstraction(){
         print("operator -")
+        result()
+        operating = true
+        operation = .subtraction
         btnSubtraction.shine()
     }
     
@@ -444,6 +462,9 @@ class CalculatorController: UIViewController {
     
     @objc func operatorAddition(){
         print("operator +")
+        result()
+        operating = true
+        operation = .addition
         btnAddition.shine()
     }
     
@@ -533,6 +554,12 @@ class CalculatorController: UIViewController {
     
     @objc func operatorPointDecimal(){
         print("operator .")
+        let currentTemp = auxFormatter.string(from: NSNumber(value: temp))!
+        if !operating && currentTemp.count >= kMaxLength{
+            return
+        }
+        lblResult.text = lblResult.text! + kDecimalSeparator
+        decimal = true
         btnDecimal.shine()
     }
     
@@ -554,6 +581,7 @@ class CalculatorController: UIViewController {
     
     @objc func operatorResult(){
         print("operator =")
+        result()
         btnResultOperation.shine()
     }
 
