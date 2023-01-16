@@ -87,13 +87,13 @@ class CalculatorController: UIViewController {
     
     private func stkHorizontal1Constraints(){
         stkMainContent.addArrangedSubview(stkHorizontal1)
-        btn1Constraints()
-        btn2Constraints()
-        btn3Constraints()
-        btn4Constraints()
+        btnOperationACConstraints()
+        btnOperationAddSubtConstraints()
+        btnPercentageConstraints()
+        btnDivisionConstraints()
     }
     
-    private lazy var btn1:UIButton = {
+    private lazy var btnOperationAC:UIButton = {
         let btn = UIButton()
         btn.setTitle("AC", for: .normal)
         btn.backgroundColor = UIColor(named: "grayButton")
@@ -104,17 +104,17 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn1Constraints(){
-        stkHorizontal1.addArrangedSubview(btn1)
-        btn1.heightAnchor.constraint(equalTo: btn1.widthAnchor, multiplier: 1).isActive = true
+    private func btnOperationACConstraints(){
+        stkHorizontal1.addArrangedSubview(btnOperationAC)
+        btnOperationAC.heightAnchor.constraint(equalTo: btnOperationAC.widthAnchor, multiplier: 1).isActive = true
     }
     
     @objc func operatorAC(){
         print("operator AC")
-        btn1.shine()
+        btnOperationAC.shine()
     }
     
-    private lazy var btn2:UIButton = {
+    private lazy var btnOperationAddSubt:UIButton = {
         let btn = UIButton()
         btn.setTitle("+/-", for: .normal)
         btn.backgroundColor = UIColor(named: "grayButton")
@@ -125,17 +125,17 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn2Constraints(){
-        stkHorizontal1.addArrangedSubview(btn2)
-        btn2.heightAnchor.constraint(equalTo: btn2.widthAnchor, multiplier: 1).isActive = true
+    private func btnOperationAddSubtConstraints(){
+        stkHorizontal1.addArrangedSubview(btnOperationAddSubt)
+        btnOperationAddSubt.heightAnchor.constraint(equalTo: btnOperationAddSubt.widthAnchor, multiplier: 1).isActive = true
     }
     
     @objc func operatorPlusMinus(){
         print("operator Plus Minus")
-        btn2.shine()
+        btnOperationAddSubt.shine()
     }
     
-    private lazy var btn3:UIButton = {
+    private lazy var btnPercentage:UIButton = {
         let btn = UIButton()
         btn.setTitle("%", for: .normal)
         btn.backgroundColor = UIColor(named: "grayButton")
@@ -146,17 +146,17 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn3Constraints(){
-        stkHorizontal1.addArrangedSubview(btn3)
-        btn3.heightAnchor.constraint(equalTo: btn3.widthAnchor, multiplier: 1).isActive = true
+    private func btnPercentageConstraints(){
+        stkHorizontal1.addArrangedSubview(btnPercentage)
+        btnPercentage.heightAnchor.constraint(equalTo: btnPercentage.widthAnchor, multiplier: 1).isActive = true
     }
     
     @objc func operatorPercentage(){
         print("operator Percentage")
-        btn3.shine()
+        btnPercentage.shine()
     }
     
-    private lazy var btn4:UIButton = {
+    private lazy var btnDivision:UIButton = {
         let btn = UIButton()
         btn.setTitle("÷", for: .normal)
         btn.backgroundColor = UIColor(named: "orangeButton")
@@ -167,14 +167,14 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn4Constraints(){
-        stkHorizontal1.addArrangedSubview(btn4)
-        btn4.heightAnchor.constraint(equalTo: btn4.widthAnchor, multiplier: 1).isActive = true
+    private func btnDivisionConstraints(){
+        stkHorizontal1.addArrangedSubview(btnDivision)
+        btnDivision.heightAnchor.constraint(equalTo: btnDivision.widthAnchor, multiplier: 1).isActive = true
     }
     
     @objc func operatorDivision(){
         print("operator Division")
-        btn4.shine()
+        btnDivision.shine()
     }
     
     private lazy var stkHorizontal2:UIStackView = {
@@ -189,13 +189,13 @@ class CalculatorController: UIViewController {
     
     private func stkHorizontal2Constraints(){
         stkMainContent.addArrangedSubview(stkHorizontal2)
-        btn5Constraints()
-        btn6Constraints()
-        btn7Constraints()
-        btn8Constraints()
+        btnSevenConstraints()
+        btnEightConstraints()
+        btnNineConstraints()
+        btnMultiplicationConstraints()
     }
     
-    private lazy var btn5:UIButton = {
+    private lazy var btnSeven:UIButton = {
         let btn = UIButton()
         btn.setTitle("7", for: .normal)
         btn.backgroundColor = UIColor(named: "blackButton")
@@ -207,12 +207,12 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn5Constraints(){
-        stkHorizontal2.addArrangedSubview(btn5)
-        btn5.heightAnchor.constraint(equalTo: btn5.widthAnchor, multiplier: 1).isActive = true
+    private func btnSevenConstraints(){
+        stkHorizontal2.addArrangedSubview(btnSeven)
+        btnSeven.heightAnchor.constraint(equalTo: btnSeven.widthAnchor, multiplier: 1).isActive = true
     }
     
-    private lazy var btn6:UIButton = {
+    private lazy var btnEight:UIButton = {
         let btn = UIButton()
         btn.setTitle("8", for: .normal)
         btn.backgroundColor = UIColor(named: "blackButton")
@@ -224,12 +224,12 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn6Constraints(){
-        stkHorizontal2.addArrangedSubview(btn6)
-        btn6.heightAnchor.constraint(equalTo: btn6.widthAnchor, multiplier: 1).isActive = true
+    private func btnEightConstraints(){
+        stkHorizontal2.addArrangedSubview(btnEight)
+        btnEight.heightAnchor.constraint(equalTo: btnEight.widthAnchor, multiplier: 1).isActive = true
     }
     
-    private lazy var btn7:UIButton = {
+    private lazy var btnNine:UIButton = {
         let btn = UIButton()
         btn.setTitle("9", for: .normal)
         btn.backgroundColor = UIColor(named: "blackButton")
@@ -241,12 +241,12 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn7Constraints(){
-        stkHorizontal2.addArrangedSubview(btn7)
-        btn7.heightAnchor.constraint(equalTo: btn7.widthAnchor, multiplier: 1).isActive = true
+    private func btnNineConstraints(){
+        stkHorizontal2.addArrangedSubview(btnNine)
+        btnNine.heightAnchor.constraint(equalTo: btnNine.widthAnchor, multiplier: 1).isActive = true
     }
     
-    private lazy var btn8:UIButton = {
+    private lazy var btnMultiplication:UIButton = {
         let btn = UIButton()
         btn.setTitle("x", for: .normal)
         btn.backgroundColor = UIColor(named: "orangeButton")
@@ -257,14 +257,14 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn8Constraints(){
-        stkHorizontal2.addArrangedSubview(btn8)
-        btn8.heightAnchor.constraint(equalTo: btn8.widthAnchor, multiplier: 1).isActive = true
+    private func btnMultiplicationConstraints(){
+        stkHorizontal2.addArrangedSubview(btnMultiplication)
+        btnMultiplication.heightAnchor.constraint(equalTo: btnMultiplication.widthAnchor, multiplier: 1).isActive = true
     }
     
     @objc func operatorMultiplication(){
         print("operator Multiplication")
-        btn8.shine()
+        btnMultiplication.shine()
     }
     
     private lazy var stkHorizontal3:UIStackView = {
@@ -279,13 +279,13 @@ class CalculatorController: UIViewController {
     
     private func stkHorizontal3Constraints(){
         stkMainContent.addArrangedSubview(stkHorizontal3)
-        btn9Constraints()
-        btn10Constraints()
-        btn11Constraints()
-        btn12Constraints()
+        btnFourConstraints()
+        btnFiveConstraints()
+        btnSixConstraints()
+        btnSubtractionConstraints()
     }
     
-    private lazy var btn9:UIButton = {
+    private lazy var btnFour:UIButton = {
         let btn = UIButton()
         btn.setTitle("4", for: .normal)
         btn.backgroundColor = UIColor(named: "blackButton")
@@ -297,12 +297,12 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn9Constraints(){
-        stkHorizontal3.addArrangedSubview(btn9)
-        btn9.heightAnchor.constraint(equalTo: btn9.widthAnchor, multiplier: 1).isActive = true
+    private func btnFourConstraints(){
+        stkHorizontal3.addArrangedSubview(btnFour)
+        btnFour.heightAnchor.constraint(equalTo: btnFour.widthAnchor, multiplier: 1).isActive = true
     }
     
-    private lazy var btn10:UIButton = {
+    private lazy var btnFive:UIButton = {
         let btn = UIButton()
         btn.setTitle("5", for: .normal)
         btn.backgroundColor = UIColor(named: "blackButton")
@@ -314,12 +314,12 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn10Constraints(){
-        stkHorizontal3.addArrangedSubview(btn10)
-        btn10.heightAnchor.constraint(equalTo: btn10.widthAnchor, multiplier: 1).isActive = true
+    private func btnFiveConstraints(){
+        stkHorizontal3.addArrangedSubview(btnFive)
+        btnFive.heightAnchor.constraint(equalTo: btnFive.widthAnchor, multiplier: 1).isActive = true
     }
     
-    private lazy var btn11:UIButton = {
+    private lazy var btnSix:UIButton = {
         let btn = UIButton()
         btn.setTitle("6", for: .normal)
         btn.backgroundColor = UIColor(named: "blackButton")
@@ -331,12 +331,12 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn11Constraints(){
-        stkHorizontal3.addArrangedSubview(btn11)
-        btn11.heightAnchor.constraint(equalTo: btn11.widthAnchor, multiplier: 1).isActive = true
+    private func btnSixConstraints(){
+        stkHorizontal3.addArrangedSubview(btnSix)
+        btnSix.heightAnchor.constraint(equalTo: btnSix.widthAnchor, multiplier: 1).isActive = true
     }
     
-    private lazy var btn12:UIButton = {
+    private lazy var btnSubtraction:UIButton = {
         let btn = UIButton()
         btn.setTitle("-", for: .normal)
         btn.backgroundColor = UIColor(named: "orangeButton")
@@ -347,14 +347,14 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn12Constraints(){
-        stkHorizontal3.addArrangedSubview(btn12)
-        btn12.heightAnchor.constraint(equalTo: btn12.widthAnchor, multiplier: 1).isActive = true
+    private func btnSubtractionConstraints(){
+        stkHorizontal3.addArrangedSubview(btnSubtraction)
+        btnSubtraction.heightAnchor.constraint(equalTo: btnSubtraction.widthAnchor, multiplier: 1).isActive = true
     }
     
     @objc func operatorSubstraction(){
         print("operator -")
-        btn12.shine()
+        btnSubtraction.shine()
     }
     
     private lazy var stkHorizontal4:UIStackView = {
@@ -369,13 +369,13 @@ class CalculatorController: UIViewController {
     
     private func stkHorizontal4Constraints(){
         stkMainContent.addArrangedSubview(stkHorizontal4)
-        btn13Constraints()
-        btn14Constraints()
-        btn15Constraints()
-        btn16Constraints()
+        btnOneConstraints()
+        btnTwoConstraints()
+        btnThreeConstraints()
+        btnAdditionConstraints()
     }
     
-    private lazy var btn13:UIButton = {
+    private lazy var btnOne:UIButton = {
         let btn = UIButton()
         btn.setTitle("1", for: .normal)
         btn.backgroundColor = UIColor(named: "blackButton")
@@ -387,12 +387,12 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn13Constraints(){
-        stkHorizontal4.addArrangedSubview(btn13)
-        btn13.heightAnchor.constraint(equalTo: btn13.widthAnchor, multiplier: 1).isActive = true
+    private func btnOneConstraints(){
+        stkHorizontal4.addArrangedSubview(btnOne)
+        btnOne.heightAnchor.constraint(equalTo: btnOne.widthAnchor, multiplier: 1).isActive = true
     }
     
-    private lazy var btn14:UIButton = {
+    private lazy var btnTwo:UIButton = {
         let btn = UIButton()
         btn.setTitle("2", for: .normal)
         btn.backgroundColor = UIColor(named: "blackButton")
@@ -404,12 +404,12 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn14Constraints(){
-        stkHorizontal4.addArrangedSubview(btn14)
-        btn14.heightAnchor.constraint(equalTo: btn14.widthAnchor, multiplier: 1).isActive = true
+    private func btnTwoConstraints(){
+        stkHorizontal4.addArrangedSubview(btnTwo)
+        btnTwo.heightAnchor.constraint(equalTo: btnTwo.widthAnchor, multiplier: 1).isActive = true
     }
     
-    private lazy var btn15:UIButton = {
+    private lazy var btnThree:UIButton = {
         let btn = UIButton()
         btn.setTitle("3", for: .normal)
         btn.backgroundColor = UIColor(named: "blackButton")
@@ -421,12 +421,12 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn15Constraints(){
-        stkHorizontal4.addArrangedSubview(btn15)
-        btn15.heightAnchor.constraint(equalTo: btn15.widthAnchor, multiplier: 1).isActive = true
+    private func btnThreeConstraints(){
+        stkHorizontal4.addArrangedSubview(btnThree)
+        btnThree.heightAnchor.constraint(equalTo: btnThree.widthAnchor, multiplier: 1).isActive = true
     }
     
-    private lazy var btn16:UIButton = {
+    private lazy var btnAddition:UIButton = {
         let btn = UIButton()
         btn.setTitle("+", for: .normal)
         btn.backgroundColor = UIColor(named: "orangeButton")
@@ -437,14 +437,14 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn16Constraints(){
-        stkHorizontal4.addArrangedSubview(btn16)
-        btn16.heightAnchor.constraint(equalTo: btn16.widthAnchor, multiplier: 1).isActive = true
+    private func btnAdditionConstraints(){
+        stkHorizontal4.addArrangedSubview(btnAddition)
+        btnAddition.heightAnchor.constraint(equalTo: btnAddition.widthAnchor, multiplier: 1).isActive = true
     }
     
     @objc func operatorAddition(){
         print("operator +")
-        btn16.shine()
+        btnAddition.shine()
     }
     
     private lazy var stkHorizontal5:UIStackView = {
@@ -475,10 +475,10 @@ class CalculatorController: UIViewController {
     
     private func stkHorizontalInternal1Constraints(){
         stkHorizontal5.addArrangedSubview(stkHorizontalInternal1)
-        btn17Constraints()
+        btnZeroConstraints()
     }
     
-    private lazy var btn17:UIButton = {
+    private lazy var btnZero:UIButton = {
         let btn = UIButton()
         btn.setTitle("0", for: .normal)
         btn.backgroundColor = UIColor(named: "blackButton")
@@ -490,8 +490,8 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn17Constraints(){
-        stkHorizontalInternal1.addArrangedSubview(btn17)
+    private func btnZeroConstraints(){
+        stkHorizontalInternal1.addArrangedSubview(btnZero)
     }
     
     @objc func operatorNumber(_ event: UIButton){
@@ -511,11 +511,11 @@ class CalculatorController: UIViewController {
     
     private func stkHorizontalInternal2Constraints(){
         stkHorizontal5.addArrangedSubview(stkHorizontalInternal2)
-        btn18Constraints()
-        btn19Constraints()
+        btnDecimalConstraints()
+        btnResultOperationConstraints()
     }
     
-    private lazy var btn18:UIButton = {
+    private lazy var btnDecimal:UIButton = {
         let btn = UIButton()
         //btn.setTitle(".", for: .normal)
         btn.backgroundColor = UIColor(named: "blackButton")
@@ -526,17 +526,17 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn18Constraints(){
-        stkHorizontalInternal2.addArrangedSubview(btn18)
-        btn18.heightAnchor.constraint(equalTo: btn18.widthAnchor, multiplier: 1).isActive = true
+    private func btnDecimalConstraints(){
+        stkHorizontalInternal2.addArrangedSubview(btnDecimal)
+        btnDecimal.heightAnchor.constraint(equalTo: btnDecimal.widthAnchor, multiplier: 1).isActive = true
     }
     
     @objc func operatorPointDecimal(){
         print("operator .")
-        btn18.shine()
+        btnDecimal.shine()
     }
     
-    private lazy var btn19:UIButton = {
+    private lazy var btnResultOperation:UIButton = {
         let btn = UIButton()
         btn.setTitle("=", for: .normal)
         btn.backgroundColor = UIColor(named: "orangeButton")
@@ -547,14 +547,14 @@ class CalculatorController: UIViewController {
         return btn
     }()
     
-    private func btn19Constraints(){
-        stkHorizontalInternal2.addArrangedSubview(btn19)
-        btn19.heightAnchor.constraint(equalTo: btn19.widthAnchor, multiplier: 1).isActive = true
+    private func btnResultOperationConstraints(){
+        stkHorizontalInternal2.addArrangedSubview(btnResultOperation)
+        btnResultOperation.heightAnchor.constraint(equalTo: btnResultOperation.widthAnchor, multiplier: 1).isActive = true
     }
     
     @objc func operatorResult(){
         print("operator =")
-        btn19.shine()
+        btnResultOperation.shine()
     }
 
     override func viewDidLoad() {
@@ -573,31 +573,31 @@ class CalculatorController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        btn1.round()
-        btn2.round()
-        btn3.round()
-        btn4.round()
-        btn5.round()
-        btn6.round()
-        btn7.round()
-        btn8.round()
-        btn9.round()
-        btn10.round()
-        btn11.round()
-        btn12.round()
-        btn13.round()
-        btn14.round()
-        btn15.round()
-        btn16.round()
-        btn17.round()
-        btn18.round()
-        btn18.setTitle(kDecimalSeparator, for: .normal)
-        btn19.round()
+        btnOperationAC.round()
+        btnOperationAddSubt.round()
+        btnPercentage.round()
+        btnDivision.round()
+        btnSeven.round()
+        btnEight.round()
+        btnNine.round()
+        btnMultiplication.round()
+        btnFour.round()
+        btnFive.round()
+        btnSix.round()
+        btnSubtraction.round()
+        btnOne.round()
+        btnTwo.round()
+        btnThree.round()
+        btnAddition.round()
+        btnZero.round()
+        btnDecimal.round()
+        btnDecimal.setTitle(kDecimalSeparator, for: .normal)
+        btnResultOperation.round()
     }
     
     @objc private func clear(){
         operation = .none
-        //btnOperationAC.setTitle("AC",for: .normal)
+        btnOperationAC.setTitle("AC",for: .normal)
         if temp != 0 {
             temp = 0
             lblResult.text = "0"
