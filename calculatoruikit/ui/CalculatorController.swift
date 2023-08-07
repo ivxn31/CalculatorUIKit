@@ -9,26 +9,46 @@ import UIKit
 
 class CalculatorController: UIViewController {
     
-    private var total: Double = 0
-    private var temp: Double = 0
-    private var operating =  false
-    private var decimal = false
-    private var operation:Operations = .none
+    // MARK: - Variables
+        
+    private var total: Double = 0                   // Total
+    private var temp: Double = 0                    // Valor por pantalla
+    private var operating = false                   // Indicar si se ha seleccionado un operador
+    private var decimal = false                     // Indicar si el valor es decimal
+    private var operation: Operations = .none       // Operación actual
+    
+    // MARK: - Constantes
     
     private let kDecimalSeparator = Locale.current.decimalSeparator!
     private let kMaxLength = 9
-    private let kMaxValue: Double = 999999999
-    private let kMinValue: Double = 0.00000001
+    private let kTotal = "total"
     
-    private let auxFormatter:NumberFormatter = {
+    // Formateo de valores auxiliares
+    private let auxFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         let locale = Locale.current
         formatter.groupingSeparator = ""
         formatter.decimalSeparator = locale.decimalSeparator
         formatter.numberStyle = .decimal
+        formatter.maximumIntegerDigits = 100
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 100
         return formatter
     }()
     
+    // Formateo de valores auxiliares totales
+    private let auxTotalFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = ""
+        formatter.decimalSeparator = ""
+        formatter.numberStyle = .decimal
+        formatter.maximumIntegerDigits = 100
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 100
+        return formatter
+    }()
+    
+    // Formateo de valores por pantalla por defecto
     private let printFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         let locale = Locale.current
@@ -38,6 +58,15 @@ class CalculatorController: UIViewController {
         formatter.maximumIntegerDigits = 9
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 8
+        return formatter
+    }()
+    
+    // Formateo de valores por pantalla en formato científico
+    private let printScientificFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .scientific
+        formatter.maximumFractionDigits = 3
+        formatter.exponentSymbol = "e"
         return formatter
     }()
     
@@ -134,6 +163,7 @@ class CalculatorController: UIViewController {
     @objc func operatorPlusMinus(){
         print("operator Plus Minus")
         temp = temp * (-1)
+        total = temp
         lblResult.text = printFormatter.string(from: NSNumber(value: temp))
         btnOperationAddSubt.shine()
     }
@@ -517,6 +547,35 @@ class CalculatorController: UIViewController {
     
     @objc func operatorNumber(_ event: UIButton){
         print("operator Number \(event.tag)")
+        btnOperationAC.setTitle("C", for: .normal)
+                
+        var currentTemp = auxTotalFormatter.string(from: NSNumber(value: temp))!
+        if !operating && currentTemp.count >= kMaxLength {
+            return
+        }
+        
+        currentTemp = auxFormatter.string(from: NSNumber(value: temp))!
+        
+        // Hemos seleccionado una operación
+        if operating {
+            total = total == 0 ? temp : total
+            lblResult.text = ""
+            currentTemp = ""
+            operating = false
+        }
+        
+        // Hemos seleccionado decimales
+        if decimal {
+            currentTemp = "\(currentTemp)\(kDecimalSeparator)"
+            decimal = false
+        }
+        
+        let number = event.tag
+        temp = Double(currentTemp + String(number))!
+        lblResult.text = printFormatter.string(from: NSNumber(value: temp))
+        
+        selectVisualOperation()
+
         event.shine()
     }
     
@@ -538,7 +597,6 @@ class CalculatorController: UIViewController {
     
     private lazy var btnDecimal:UIButton = {
         let btn = UIButton()
-        //btn.setTitle(".", for: .normal)
         btn.backgroundColor = UIColor(named: "blackButton")
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
@@ -635,9 +693,13 @@ class CalculatorController: UIViewController {
         }
     }
     
-    @objc private func result(){
+    @objc // Obtiene el resultado final
+    private func result() {
+        
         switch operation {
+
         case .none:
+            // No hacemos nada
             break
         case .addition:
             total = total + temp
@@ -656,9 +718,65 @@ class CalculatorController: UIViewController {
             total = temp
             break
         }
-        if total <= kMaxValue || total > kMinValue {
+        
+        // Formateo en pantalla
+        if let currentTotal = auxTotalFormatter.string(from: NSNumber(value: total)), currentTotal.count > kMaxLength {
+            lblResult.text = printScientificFormatter.string(from: NSNumber(value: total))
+        } else {
             lblResult.text = printFormatter.string(from: NSNumber(value: total))
         }
+        
+        operation = .none
+        
+        selectVisualOperation()
+        
+        UserDefaults.standard.set(total, forKey: kTotal)
+        
+        print("TOTAL: \(total)")
+    }
+    
+    // Muestra de forma visual la operación seleccionada
+    private func selectVisualOperation() {
+        /*if !operating {
+            // No estamos operando
+            btnAddition.selectOperation(false)
+            operatorSubstraction.selectOperation(false)
+            operatorMultiplication.selectOperation(false)
+            operatorDivision.selectOperation(false)
+        } else {
+            switch operation {
+            case .none, .percent:
+                operatorAddition.selectOperation(false)
+                operatorSubstraction.selectOperation(false)
+                operatorMultiplication.selectOperation(false)
+                operatorDivision.selectOperation(false)
+                break
+            case .addiction:
+                operatorAddition.selectOperation(true)
+                operatorSubstraction.selectOperation(false)
+                operatorMultiplication.selectOperation(false)
+                operatorDivision.selectOperation(false)
+                break
+            case .substraction:
+                operatorAddition.selectOperation(false)
+                operatorSubstraction.selectOperation(true)
+                operatorMultiplication.selectOperation(false)
+                operatorDivision.selectOperation(false)
+                break
+            case .multiplication:
+                operatorAddition.selectOperation(false)
+                operatorSubstraction.selectOperation(false)
+                operatorMultiplication.selectOperation(true)
+                operatorDivision.selectOperation(false)
+                break
+            case .division:
+                operatorAddition.selectOperation(false)
+                operatorSubstraction.selectOperation(false)
+                operatorMultiplication.selectOperation(false)
+                operatorDivision.selectOperation(true)
+                break
+            }
+        }*/
     }
 }
 
