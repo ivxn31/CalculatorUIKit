@@ -12,8 +12,22 @@
 		2310C7A12965026F0067979E /* CalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310C7A02965026F0067979E /* CalculatorController.swift */; };
 		2310C7A6296502710067979E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2310C7A5296502710067979E /* Assets.xcassets */; };
 		2310C7A9296502710067979E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2310C7A7296502710067979E /* LaunchScreen.storyboard */; };
+		2321A5422A8D8BE400A9AE1F /* ICRRowView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321A5412A8D8BE400A9AE1F /* ICRRowView2.swift */; };
+		2321A5442A8D903F00A9AE1F /* ICRColumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321A5432A8D903F00A9AE1F /* ICRColumView.swift */; };
+		2321A5462A8D94DA00A9AE1F /* ICRRowView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321A5452A8D94DA00A9AE1F /* ICRRowView3.swift */; };
+		2321A5482A8D965200A9AE1F /* ICRRowView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321A5472A8D965200A9AE1F /* ICRRowView4.swift */; };
+		2321A54A2A8D965D00A9AE1F /* ICRRowView5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321A5492A8D965D00A9AE1F /* ICRRowView5.swift */; };
+		2321A54C2A8D9CD500A9AE1F /* ICRRowInternal1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321A54B2A8D9CD500A9AE1F /* ICRRowInternal1.swift */; };
+		2321A54E2A8D9CE200A9AE1F /* ICRRowInternal2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321A54D2A8D9CE200A9AE1F /* ICRRowInternal2.swift */; };
+		234654B32A817D22001B9802 /* CalculatorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234654B22A817D22001B9802 /* CalculatorScreen.swift */; };
+		234654B52A81BA02001B9802 /* Calculator2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234654B42A81BA02001B9802 /* Calculator2Controller.swift */; };
 		2346B0A7297603E200692A73 /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346B0A6297603E200692A73 /* Operations.swift */; };
+		236E1FD42A8D4598004290CA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E1FD32A8D4598004290CA /* UIColorExtension.swift */; };
+		236E1FD62A8D466A004290CA /* ICRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E1FD52A8D466A004290CA /* ICRButton.swift */; };
+		236E1FD82A8D58A9004290CA /* AtomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236E1FD72A8D58A9004290CA /* AtomStackView.swift */; };
 		2372BECF296CE24B0074E64E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2372BECE296CE24B0074E64E /* UIButtonExtension.swift */; };
+		23FE72C82A86A5830042CDD0 /* ICRRowView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE72C72A86A5830042CDD0 /* ICRRowView1.swift */; };
+		23FE72CC2A86B7860042CDD0 /* Simbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE72CB2A86B7860042CDD0 /* Simbols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +38,22 @@
 		2310C7A5296502710067979E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2310C7A8296502710067979E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2310C7AA296502710067979E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2321A5412A8D8BE400A9AE1F /* ICRRowView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICRRowView2.swift; sourceTree = "<group>"; };
+		2321A5432A8D903F00A9AE1F /* ICRColumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICRColumView.swift; sourceTree = "<group>"; };
+		2321A5452A8D94DA00A9AE1F /* ICRRowView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICRRowView3.swift; sourceTree = "<group>"; };
+		2321A5472A8D965200A9AE1F /* ICRRowView4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICRRowView4.swift; sourceTree = "<group>"; };
+		2321A5492A8D965D00A9AE1F /* ICRRowView5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICRRowView5.swift; sourceTree = "<group>"; };
+		2321A54B2A8D9CD500A9AE1F /* ICRRowInternal1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICRRowInternal1.swift; sourceTree = "<group>"; };
+		2321A54D2A8D9CE200A9AE1F /* ICRRowInternal2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICRRowInternal2.swift; sourceTree = "<group>"; };
+		234654B22A817D22001B9802 /* CalculatorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorScreen.swift; sourceTree = "<group>"; };
+		234654B42A81BA02001B9802 /* Calculator2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator2Controller.swift; sourceTree = "<group>"; };
 		2346B0A6297603E200692A73 /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
+		236E1FD32A8D4598004290CA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		236E1FD52A8D466A004290CA /* ICRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICRButton.swift; sourceTree = "<group>"; };
+		236E1FD72A8D58A9004290CA /* AtomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomStackView.swift; sourceTree = "<group>"; };
 		2372BECE296CE24B0074E64E /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		23FE72C72A86A5830042CDD0 /* ICRRowView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICRRowView1.swift; sourceTree = "<group>"; };
+		23FE72CB2A86B7860042CDD0 /* Simbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simbols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				2346B0A5297603CD00692A73 /* domain */,
+				234654B02A817CC8001B9802 /* presentation */,
 				2310C7B2296502F00067979E /* resources */,
-				2310C7B1296502EB0067979E /* ui */,
 				2310C7B0296502E40067979E /* settings */,
 			);
 			path = calculatoruikit;
@@ -79,8 +107,7 @@
 		2310C7B1296502EB0067979E /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				2310C7A02965026F0067979E /* CalculatorController.swift */,
-				2310C7A7296502710067979E /* LaunchScreen.storyboard */,
+				234654B62A81BC48001B9802 /* AtomicDesign */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -90,14 +117,77 @@
 			children = (
 				2310C7A5296502710067979E /* Assets.xcassets */,
 				2372BECE296CE24B0074E64E /* UIButtonExtension.swift */,
+				236E1FD32A8D4598004290CA /* UIColorExtension.swift */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		2321A53F2A8D8AF300A9AE1F /* atoms */ = {
+			isa = PBXGroup;
+			children = (
+				236E1FD72A8D58A9004290CA /* AtomStackView.swift */,
+				236E1FD52A8D466A004290CA /* ICRButton.swift */,
+			);
+			path = atoms;
+			sourceTree = "<group>";
+		};
+		2321A5402A8D8B0D00A9AE1F /* molecules */ = {
+			isa = PBXGroup;
+			children = (
+				23FE72C72A86A5830042CDD0 /* ICRRowView1.swift */,
+				2321A5412A8D8BE400A9AE1F /* ICRRowView2.swift */,
+				2321A5452A8D94DA00A9AE1F /* ICRRowView3.swift */,
+				2321A5472A8D965200A9AE1F /* ICRRowView4.swift */,
+				2321A5492A8D965D00A9AE1F /* ICRRowView5.swift */,
+				2321A54B2A8D9CD500A9AE1F /* ICRRowInternal1.swift */,
+				2321A54D2A8D9CE200A9AE1F /* ICRRowInternal2.swift */,
+				2321A5432A8D903F00A9AE1F /* ICRColumView.swift */,
+			);
+			path = molecules;
+			sourceTree = "<group>";
+		};
+		2321A5512A8DA6A800A9AE1F /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				2310C7A7296502710067979E /* LaunchScreen.storyboard */,
+				234654B22A817D22001B9802 /* CalculatorScreen.swift */,
+			);
+			path = screens;
+			sourceTree = "<group>";
+		};
+		234654B02A817CC8001B9802 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				234654B12A817CFA001B9802 /* controllers */,
+				2310C7B1296502EB0067979E /* ui */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		234654B12A817CFA001B9802 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2310C7A02965026F0067979E /* CalculatorController.swift */,
+				234654B42A81BA02001B9802 /* Calculator2Controller.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		234654B62A81BC48001B9802 /* AtomicDesign */ = {
+			isa = PBXGroup;
+			children = (
+				2321A53F2A8D8AF300A9AE1F /* atoms */,
+				2321A5402A8D8B0D00A9AE1F /* molecules */,
+				2321A5512A8DA6A800A9AE1F /* screens */,
+			);
+			path = AtomicDesign;
 			sourceTree = "<group>";
 		};
 		2346B0A5297603CD00692A73 /* domain */ = {
 			isa = PBXGroup;
 			children = (
 				2346B0A6297603E200692A73 /* Operations.swift */,
+				23FE72CB2A86B7860042CDD0 /* Simbols.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -172,10 +262,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2321A54A2A8D965D00A9AE1F /* ICRRowView5.swift in Sources */,
+				23FE72CC2A86B7860042CDD0 /* Simbols.swift in Sources */,
+				2321A5482A8D965200A9AE1F /* ICRRowView4.swift in Sources */,
 				2310C7A12965026F0067979E /* CalculatorController.swift in Sources */,
+				2321A54C2A8D9CD500A9AE1F /* ICRRowInternal1.swift in Sources */,
+				234654B52A81BA02001B9802 /* Calculator2Controller.swift in Sources */,
 				2372BECF296CE24B0074E64E /* UIButtonExtension.swift in Sources */,
+				2321A5422A8D8BE400A9AE1F /* ICRRowView2.swift in Sources */,
+				2321A5462A8D94DA00A9AE1F /* ICRRowView3.swift in Sources */,
+				23FE72C82A86A5830042CDD0 /* ICRRowView1.swift in Sources */,
+				234654B32A817D22001B9802 /* CalculatorScreen.swift in Sources */,
 				2310C79D2965026F0067979E /* AppDelegate.swift in Sources */,
+				236E1FD42A8D4598004290CA /* UIColorExtension.swift in Sources */,
 				2310C79F2965026F0067979E /* SceneDelegate.swift in Sources */,
+				236E1FD62A8D466A004290CA /* ICRButton.swift in Sources */,
+				2321A54E2A8D9CE200A9AE1F /* ICRRowInternal2.swift in Sources */,
+				236E1FD82A8D58A9004290CA /* AtomStackView.swift in Sources */,
+				2321A5442A8D903F00A9AE1F /* ICRColumView.swift in Sources */,
 				2346B0A7297603E200692A73 /* Operations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,7 +416,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -338,7 +441,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

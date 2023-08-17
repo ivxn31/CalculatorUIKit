@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Operations{
+enum Operations {
     case none,
          addition,
          subtraction,

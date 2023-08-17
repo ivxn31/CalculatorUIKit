@@ -50,7 +50,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func setupView(_ scene: UIWindowScene){
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = CalculatorController()
+        window?.rootViewController = Calculator2Controller()
         window?.makeKeyAndVisible()
     }
 }
